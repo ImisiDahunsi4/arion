@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Backgrounds */
+  --background: #F5F4F9; /* design.json: backgrounds.primary */
+  --foreground: #1A1A1A; /* design.json: text.primary */
+  
+  --card: #FFFFFF; /* design.json: backgrounds.card */
+  --card-foreground: #1A1A1A;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  
+  --primary: #6366F1; /* design.json: brand.primary */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #FFFFFF; /* design.json: backgrounds.secondary / buttons.secondary */
+  --secondary-foreground: #1A1A1A;
+  
+  --muted: #F5F4F9;
+  --muted-foreground: #666666; /* design.json: text.secondary */
+  
+  --accent: #F59E0B; /* design.json: brand.accent */
+  --accent-foreground: #1A1A1A;
+  
+  --destructive: #EF4444; /* design.json: status.error.text-ish */
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E8E8ED; /* design.json: borders.light */
+  --input: #E8E8ED;
+  --ring: #6366F1; /* brand primary */
+  
+  --radius: 0.75rem; /* 12px for cards -> ~0.75rem */
+}
+
+.dark {
+  /* Backgrounds */
+  --background: #1A1A1A; /* design.json: backgrounds.darkMode */
+  --foreground: #FFFFFF; /* design.json: text.inverse */
+  
+  --card: #2A2A2A; /* design.json: backgrounds.darkModeCard */
+  --card-foreground: #FFFFFF;
+  
+  --popover: #2A2A2A;
+  --popover-foreground: #FFFFFF;
+  
+  --primary: #6366F1; /* Keep brand primary */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #2A2A2A;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #2A2A2A;
+  --muted-foreground: #999999; /* design.json: text.tertiary */
+  
+  --accent: #F59E0B;
+  --accent-foreground: #FFFFFF;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #666666; /* design.json: borders.dark */
+  --input: #666666;
+  --ring: #6366F1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Arion Custom Gradients */
+  --image-gradient-purple: linear-gradient(135deg, #E8E4F3 0%, #D5CEE8 100%);
+  --image-gradient-assistant: linear-gradient(135deg, #9B87F5 0%, #7E69D6 100%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
